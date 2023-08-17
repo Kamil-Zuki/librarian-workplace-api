@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using librarian_workplace_BLL.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace librarian_workplace_api.Controllers
 {
@@ -6,9 +7,10 @@ namespace librarian_workplace_api.Controllers
     [ApiController]
     public class ReaderController : ControllerBase
     {
-        public ReaderController()
+        private readonly IReaderService _readerService; 
+        public ReaderController(IReaderService readerService)
         {
-
+            _readerService = readerService;
         }
 
 

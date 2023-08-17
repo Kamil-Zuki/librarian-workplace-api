@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace librarian_workplace_DAL.Models.Entities
+namespace librarian_workplace_DAL.Interfaces
 {
-    public class Book
+    public interface IDeletableEntity
     {
-
+        bool IsDeleted { get; set; }
     }
 }
