@@ -33,7 +33,7 @@ namespace librarian_workplace_api.Controllers
             }
         }
 
-        [HttpGet]
+        [HttpGet("{articleNumber}")]
         public async Task<ActionResult<BookInfoDTO>> GetAsync(Guid articleNumber)
         {
             try

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using librarian_workplace_DAL.EF;
@@ -11,9 +12,11 @@ using librarian_workplace_DAL.EF;
 namespace librarian_workplace_DAL.Migrations
 {
     [DbContext(typeof(LibraryContext))]
-    partial class LibraryContextModelSnapshot : ModelSnapshot
+    [Migration("20230818121304_AddColumnToReaderBook")]
+    partial class AddColumnToReaderBook
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -104,8 +107,7 @@ namespace librarian_workplace_DAL.Migrations
                         .HasColumnName("articule_number");
 
                     b.Property<DateTime>("DateBorrowed")
-                        .HasColumnType("timestamp")
-                        .HasColumnName("date_borrowed");
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("boolean")

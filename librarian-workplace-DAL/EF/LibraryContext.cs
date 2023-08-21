@@ -111,6 +111,10 @@ namespace librarian_workplace_DAL.EF
                     .HasColumnType("boolean")
                     .HasColumnName("is_deleted");
 
+                entity.Property(e => e.DateBorrowed)
+                    .HasColumnType("timestamp")
+                    .HasColumnName("date_borrowed");
+
                 entity.HasOne(d => d.Reader)
                     .WithMany(p => p.ReaderBooks)
                     .HasForeignKey(d => d.ReaderId)

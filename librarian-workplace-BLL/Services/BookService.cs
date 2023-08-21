@@ -27,7 +27,6 @@ namespace librarian_workplace_BLL.Services
                     "dd.MM.yyyy", "yyyy.MM.dd", "MM.dd.yyyy", "d.MM.yyyy", "M.dd.yyyy",  "DD.MM.yyyy", "dd.MM.YYYY", "DD.MM.YYYY"};
             DateTime.TryParseExact(bookDTO.PublicationDate, possibleFormats, CultureInfo.InvariantCulture, DateTimeStyles.None, out publicationDate);
 
-
             await Database.Book.AddAsync(new Book()
             {
                 ArticleNumber = bookDTO.ArticleNumber,
